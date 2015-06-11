@@ -7,12 +7,12 @@ ActiveRecord::Base.establish_connection(
   "database" => "./bbs.db"
 )
 
-class Commnet < ActiveRecord::Base
+class Comment < ActiveRecord::Base
 
 end
 
 get '/' do
-  @commets = Commnet.order("id desc").all
+  @comments = Comment.order("id desc").all
   @title = "bbs"
   erb :index
 end
