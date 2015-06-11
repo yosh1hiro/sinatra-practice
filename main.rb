@@ -16,3 +16,8 @@ get '/' do
   @title = "bbs"
   erb :index
 end
+
+post '/' do
+  Comment.create({body: params[:body]})
+  redirect '/'
+end
